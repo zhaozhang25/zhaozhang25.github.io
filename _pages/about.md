@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hi, I'm Zhao Zhang, graduate student in Electrical Engineering at University of Pnnsylvania. I obtained Bachelor's degree at Xidian University in China, majored in Applied Physics.
+Hi, I'm Zhao Zhang, graduate student in Electrical Engineering at University of Pnnsylvania. I obtained my Bachelor's degree in Applied Physics at Xidian University, supervised by Prof.Jiajie Wang.
 
 My research interest includes Neural Decoding and Brain-computer Interfaces. 
 
