@@ -61,18 +61,12 @@
   }
 }
 
-.dark-mode-toggle-item {
-  display: table-cell !important;
-  vertical-align: middle;
-  padding-left: 0.5em;
-}
-
-.greedy-nav .dark-mode-toggle {
-  position: static;
-  height: auto;
-  right: auto;
-  background: none;
-  background-color: transparent;
+.dark-mode-toggle {
+  position: fixed;
+  top: 0.6em;
+  right: 1em;
+  z-index: 1000;
+  background: #fff;
   border: 1px solid $border-color;
   border-radius: 50%;
   width: 2em;
@@ -85,12 +79,13 @@
   padding: 0;
   color: $text-color;
   transition: background-color 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 
   &:hover {
     background-color: $lighter-gray;
   }
 
-  .dark-mode-toggle__icon {
+  &__icon {
     line-height: 1;
   }
 }
@@ -136,6 +131,7 @@ html.dark-mode {
   }
 
   .dark-mode-toggle {
+    background: #1e1e1e;
     border-color: #555;
     color: #e0e0e0;
 
