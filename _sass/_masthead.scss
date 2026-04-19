@@ -18,7 +18,6 @@
     @include clearfix;
     padding: .5em;
     font-family: $sans-serif-narrow;
-    position: relative;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -62,11 +61,13 @@
   }
 }
 
+.dark-mode-toggle-item {
+  display: table-cell !important;
+  vertical-align: middle;
+  padding-left: 0.5em;
+}
+
 .dark-mode-toggle {
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  transform: translateY(-50%);
   background: none;
   border: 1px solid $border-color;
   border-radius: 50%;
@@ -80,6 +81,7 @@
   padding: 0;
   color: $text-color;
   transition: background-color 0.2s, color 0.2s;
+  position: static !important;
 
   &:hover {
     background-color: $lighter-gray;
