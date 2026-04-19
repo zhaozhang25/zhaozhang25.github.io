@@ -18,6 +18,7 @@
     @include clearfix;
     padding: .5em;
     font-family: $sans-serif-narrow;
+    position: relative;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -58,6 +59,155 @@
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+  }
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: $text-color;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $lighter-gray;
+  }
+
+  &__icon {
+    line-height: 1;
+  }
+}
+
+/* Dark mode styles */
+html.dark-mode {
+  .masthead {
+    background-color: #1a1a2e;
+    border-bottom-color: #333;
+  }
+
+  body,
+  .page__content,
+  .sidebar,
+  .author__bio,
+  .archive__item,
+  .page,
+  .initial-content {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #f0f0f0;
+  }
+
+  a {
+    color: #90caf9;
+  }
+
+  .masthead__menu-item a,
+  .greedy-nav a {
+    color: #e0e0e0;
+
+    &:hover {
+      color: #90caf9;
+    }
+  }
+
+  .dark-mode-toggle {
+    border-color: #555;
+    color: #e0e0e0;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+
+  .sidebar,
+  .author__urls-wrapper {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .author__name,
+  .author__bio {
+    color: #e0e0e0;
+  }
+
+  .author__urls a {
+    color: #90caf9;
+  }
+
+  .page__content {
+    color: #e0e0e0;
+  }
+
+  .toc,
+  .toc__menu {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+
+  table {
+    color: #e0e0e0;
+
+    th {
+      background-color: #2a2a2a;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #1e1e1e;
+    }
+  }
+
+  code,
+  pre {
+    background-color: #2a2a2a;
+    color: #f8f8f2;
+  }
+
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--danger,
+  .notice--success {
+    border-color: #444;
+  }
+
+  .page__footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+  }
+
+  .greedy-nav {
+    background: transparent;
+  }
+
+  .greedy-nav__toggle {
+    color: #e0e0e0;
+  }
+
+  .navicon,
+  .navicon::before,
+  .navicon::after {
+    background: #e0e0e0;
   }
 }
 

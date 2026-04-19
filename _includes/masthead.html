@@ -12,5 +12,36 @@
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+      <span class="dark-mode-toggle__icon">&#9790;</span>
+    </button>
   </div>
 </div>
+
+<script>
+(function() {
+  var toggle = document.getElementById('dark-mode-toggle');
+  var icon = toggle ? toggle.querySelector('.dark-mode-toggle__icon') : null;
+
+  function applyTheme(dark) {
+    if (dark) {
+      document.documentElement.classList.add('dark-mode');
+      if (icon) icon.innerHTML = '&#9728;';
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+      if (icon) icon.innerHTML = '&#9790;';
+    }
+  }
+
+  var saved = localStorage.getItem('darkMode');
+  applyTheme(saved === 'true');
+
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      var isDark = document.documentElement.classList.contains('dark-mode');
+      applyTheme(!isDark);
+      localStorage.setItem('darkMode', !isDark);
+    });
+  }
+})();
+</script>
