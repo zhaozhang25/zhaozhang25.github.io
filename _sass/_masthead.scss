@@ -67,8 +67,12 @@
   padding-left: 0.5em;
 }
 
-.dark-mode-toggle {
+.greedy-nav .dark-mode-toggle {
+  position: static;
+  height: auto;
+  right: auto;
   background: none;
+  background-color: transparent;
   border: 1px solid $border-color;
   border-radius: 50%;
   width: 2em;
@@ -81,13 +85,12 @@
   padding: 0;
   color: $text-color;
   transition: background-color 0.2s, color 0.2s;
-  position: static !important;
 
   &:hover {
     background-color: $lighter-gray;
   }
 
-  &__icon {
+  .dark-mode-toggle__icon {
     line-height: 1;
   }
 }
