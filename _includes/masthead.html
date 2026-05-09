@@ -15,12 +15,15 @@
   </div>
 </div>
 
+<canvas id="stars-canvas"></canvas>
+
 <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
   <span class="dark-mode-toggle__icon">&#9790;</span>
 </button>
 
 <script>
 (function() {
+  // --- Dark mode toggle ---
   var toggle = document.getElementById('dark-mode-toggle');
   var icon = toggle ? toggle.querySelector('.dark-mode-toggle__icon') : null;
 
@@ -43,6 +46,97 @@
       applyTheme(!isDark);
       localStorage.setItem('darkMode', !isDark);
     });
+  }
+
+  // --- Starfield ---
+  var canvas = document.getElementById('stars-canvas');
+  var ctx = canvas.getContext('2d');
+  var stars = [];
+  var animId;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.floor((canvas.width * canvas.height) / 6000);
+    count = Math.max(80, Math.min(count, 220));
+    for (var i = 0; i < count; i++) {
+      var big = Math.random() < 0.08;
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: big ? (1.5 + Math.random() * 1.5) : (0.4 + Math.random() * 1.1),
+        base: big ? (0.6 + Math.random() * 0.4) : (0.3 + Math.random() * 0.5),
+        speed: 0.4 + Math.random() * 1.2,
+        phase: Math.random() * Math.PI * 2,
+        big: big
+      });
+    }
+  }
+
+  function drawStars(t) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var alpha = s.base + (1 - s.base) * 0.5 * (1 + Math.sin(t * s.speed + s.phase));
+      ctx.globalAlpha = alpha;
+      if (s.big) {
+        var grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 3);
+        grd.addColorStop(0, 'rgba(255,255,220,1)');
+        grd.addColorStop(1, 'rgba(180,200,255,0)');
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+      }
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = s.big ? '#ffffcc' : '#c8d8ff';
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  var startTime = null;
+  function animate(ts) {
+    if (!startTime) startTime = ts;
+    drawStars((ts - startTime) / 1000);
+    animId = requestAnimationFrame(animate);
+  }
+
+  function startStars() {
+    if (animId) return;
+    resize();
+    initStars();
+    startTime = null;
+    animId = requestAnimationFrame(animate);
+  }
+
+  function stopStars() {
+    if (animId) { cancelAnimationFrame(animId); animId = null; }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  window.addEventListener('resize', function() {
+    if (animId) { resize(); initStars(); }
+  });
+
+  // Observe dark-mode class changes
+  var observer = new MutationObserver(function() {
+    if (document.documentElement.classList.contains('dark-mode')) {
+      startStars();
+    } else {
+      stopStars();
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  // Start immediately if already in dark mode
+  if (document.documentElement.classList.contains('dark-mode')) {
+    startStars();
   }
 })();
 </script>
