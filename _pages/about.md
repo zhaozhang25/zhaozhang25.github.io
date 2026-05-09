@@ -17,9 +17,11 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hi, I'm Zhao Zhang, graduate student in Electrical Engineering at University of Pnnsylvania. I obtained my Bachelor's degree in Applied Physics at Xidian University, supervised by Prof.Jiajie Wang.
+Hi, I'm Zhao Zhang, a graduate student in Electrical Engineering at the University of Pennsylvania, supervised by [Dr. Li Shen](https://www.med.upenn.edu/apps/faculty/index.php/g275/p9075258). I obtained my Bachelor's degree in Applied Physics at Xidian University, supervised by [Dr. Jiajie Wang](https://faculty.xidian.edu.cn/WJJ3/zh_CN/index.htm).
 
-My research interest includes Neural Decoding and Brain-computer Interfaces. 
+My research interests include Neural Decoding, Brain-computer Interfaces, Multimodal Agents, and Generative AI.
+
+Outside of the lab, I like musics and watching movies — I'm fascinated by the ideas explored in *Ready Player One* and *The Matrix*. I'm also a big fan of FC Barcelona. ⚽🔵🔴
 
 
 # 🔥 News
