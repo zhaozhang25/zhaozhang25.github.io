@@ -109,6 +109,8 @@ html.dark-mode #stars-canvas {
 
 /* Dark mode styles */
 html.dark-mode {
+  background-color: #121212;
+
   .masthead {
     background-color: #1a1a2e;
     border-bottom-color: #333;
@@ -121,12 +123,12 @@ html.dark-mode {
   .archive__item,
   .page,
   .initial-content {
-    background-color: #121212;
+    background-color: transparent;
     color: #e0e0e0;
   }
 
   body {
-    background-color: #121212;
+    background-color: transparent;
     color: #e0e0e0;
   }
 
