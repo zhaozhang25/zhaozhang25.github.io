@@ -20,10 +20,10 @@
         <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
       {% endif %}
       {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true" style="color: #E8423F;"></i> {{ author.location }}</li>
+        <li><span class="fa-stack" style="font-size:0.6em;line-height:1.2em;vertical-align:middle;" aria-hidden="true"><i class="fa fa-map-marker fa-stack-2x" style="color:#E8423F;"></i><i class="fa fa-circle fa-stack-1x" style="color:white;font-size:0.42em;transform:translateY(-30%);"></i></span> {{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true" style="color: #E8423F;"></i> {{ author.employer }}</li>
+        <li><span class="fa-stack" style="font-size:0.6em;line-height:1.2em;vertical-align:middle;" aria-hidden="true"><i class="fa fa-map-marker fa-stack-2x" style="color:#E8423F;"></i><i class="fa fa-circle fa-stack-1x" style="color:white;font-size:0.42em;transform:translateY(-30%);"></i></span> {{ author.employer }}</li>
       {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
