@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hi, I'm Zhao Zhang, a graduate student in Electrical Engineering at the University of Pennsylvania, supervised by [Dr. Li Shen](https://www.med.upenn.edu/apps/faculty/index.php/g275/p9075258). I obtained my Bachelor's degree in Applied Physics at Xidian University, supervised by [Dr. Jiajie Wang](https://faculty.xidian.edu.cn/WJJ3/zh_CN/index.htm).
+Hi, I'm Zhao Zhang, a graduate student in Electrical Engineering at the University of Pennsylvania, co-supervised by [Dr. Li Shen](https://www.med.upenn.edu/apps/faculty/index.php/g275/p9075258) and [Dr. Yong Fan](https://www.med.upenn.edu/apps/faculty/index.php/g275/p4257219). I obtained my Bachelor's degree in Applied Physics at Xidian University, supervised by [Dr. Jiajie Wang](https://faculty.xidian.edu.cn/WJJ3/zh_CN/index.htm).
 
 My research interests include Neural Decoding, Brain-computer Interfaces, Multimodal Agents, and Generative AI.
 
