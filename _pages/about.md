@@ -39,9 +39,8 @@ Shu Yang<sup>\*</sup>, Anyu Pan<sup>\*</sup>, Hyowon Shin<sup>\*</sup>, Hongzhuo
 
 [**Code**](https://github.com/PennShenLab/scratch-aid-plus)
 
+- We present Scratch-AID+, a framework for automated mouse scratching detection spanning classic ResNet-based detectors, task-adaptive fine-tuning of video foundation models, and in-context learning with multimodal large language models (MLLMs). Benchmarked on a public dataset and independent cross-laboratory recordings, fine-tuned video foundation models substantially improve generalizability over classic baselines, while frozen MLLMs show promising out-of-the-box few-shot ability.
 - <sup>\*</sup> indicates equal contribution.
-- We present Scratch-AID+, a framework for automated mouse scratching detection spanning classic ResNet-based detectors, task-adaptive fine-tuning of video foundation models, and in-context learning with multimodal large language models.
-- Benchmarking on a public dataset and independent cross-laboratory recordings, we show that fine-tuned video foundation models substantially improve generalizability over classic baselines, while frozen MLLMs show promising few-shot ability out of the box.
 </div>
 </div>
 
